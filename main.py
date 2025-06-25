@@ -1,19 +1,285 @@
+-AR-15-[RUS]
+ar15rus
+Невидимый
+
+denisbrave
+ начал звонок, который продлился 6 часов. — 21.06.2025 20:43
+Vertair — 21.06.2025 22:17
+1259310834
+код друга стим
+-AR-15-[RUS] — 21.06.2025 22:24
+Изображение
+-AR-15-[RUS] — 21.06.2025 23:22
+Изображение
+-AR-15-[RUS] — 22.06.2025 0:56
+Изображение
+denisbrave
+[SCUG]
+ — 22.06.2025 1:49
+https://www.roblox.com/share?code=e6b9ff9367ae2a44b6c138357b276b21&type=Server
+Roblox
+Join Private Server
+Check out Forsaken. It’s one of the millions of unique, user-generated 3D experiences created on Roblox. [ THIS GAME IS IN ALPHA!! EXPECT EVERYTHING TO CHANGE & FOR LOTS OF BUGS ]
+
+Welcome to your eternal prison.
+
+Step into its realm to encounter all sorts of familiar faces; be it a friend, a foe, or a mix of both—you're bound to meet them ...
+Join Private Server
+-AR-15-[RUS]
+ начал звонок, который продлился 9 минут. — 22.06.2025 18:12
+Vertair
+ начал звонок, который продлился 5 часов. — 22.06.2025 21:07
+denisbrave
+[SCUG]
+ — 22.06.2025 21:15
+https://www.youtube.com/watch?v=IPFiKEm-oNI&ab_channel=raxdflipnote
+YouTube
+raxdflipnote
+gamblecore
+Изображение
+-AR-15-[RUS] — 23.06.2025 0:24
+Изображение
+Изображение
+Vertair — 23.06.2025 17:05
+@denisbrave  го в форсейкен?
+denisbrave
+[SCUG]
+ — 23.06.2025 17:05
+AR-15 будет?
+Vertair — 23.06.2025 17:05
+я пока хз
+denisbrave
+[SCUG]
+ — 23.06.2025 17:06
+давай его дождёмся.
+Vertair — 23.06.2025 17:06
+оке
+Vertair
+ начал звонок, который продлился 5 часов. — 23.06.2025 17:32
+-AR-15-[RUS] — 23.06.2025 20:48
+Изображение
+-AR-15-[RUS] — 23.06.2025 22:40
+Изображение
+Изображение
+Изображение
+-AR-15-[RUS] — Вчера, в 16:23
+что сегодня будем играть ?
+denisbrave
+[SCUG]
+ — Вчера, в 16:23
+Как всегда, сначала forsaken, потом peak.
+Но…
+-AR-15-[RUS] — Вчера, в 16:23
+окей
+во сколько ?
+denisbrave
+[SCUG]
+ — Вчера, в 16:23
+Может быть мы можем сразу поиграть в peak?
+-AR-15-[RUS] — Вчера, в 16:23
+я сейчас готов
+-AR-15-[RUS] — Вчера, в 16:24
+можно
+denisbrave
+[SCUG]
+ — Вчера, в 16:24
+Когда vertair сможет сейчас тогда и поиграем
+-AR-15-[RUS] — Вчера, в 16:24
+окей
+сейчас позвоню
+denisbrave
+[SCUG]
+ — Вчера, в 16:25
+А я сейчас приму ванну и смогу.
+-AR-15-[RUS] — Вчера, в 16:25
+окей
+denisbrave
+[SCUG]
+ — Вчера, в 16:25
+Дай мне… 20-30 мин. 25?
+-AR-15-[RUS] — Вчера, в 16:25
+хорошо помыться
+denisbrave
+[SCUG]
+ — Вчера, в 16:25
+Спасибо :3
+-AR-15-[RUS] — Вчера, в 16:25
+окей
+он сказал что придет в 19
+так что подождем 3 часа
+denisbrave
+[SCUG]
+ — Вчера, в 16:55
+Хорошо
+Vertair
+ начал звонок, который продлился 5 часов. — Вчера, в 19:42
+denisbrave
+[SCUG]
+ — Вчера, в 20:29
+106759416
+denisbrave
+[SCUG]
+ — Вчера, в 20:38
+8945713285
+-AR-15-[RUS] — Вчера, в 22:18
+denisbrave
+[SCUG]
+ — Вчера, в 23:18
+-AR-15-[RUS] — Вчера, в 23:21
+Изображение
+denisbrave
+[SCUG]
+ — 0:02
+Тип вложенного файла: unknown
+ggertgger.stl
+1.28 MB
+-AR-15-[RUS] — 1:09
+@everyone 18:00
+denisbrave
+[SCUG]
+ — 18:00
+пора? пора
+-AR-15-[RUS] — 18:00
+можно
+denisbrave
+[SCUG]
+ — 18:00
+как vertair откликнится здесь, начнём
+-AR-15-[RUS] — 18:00
+ок
+Vertair
+ начинает звонок. — 18:01
+denisbrave
+[SCUG]
+ — 18:10
+https://aistudio.google.com/app/prompts/new_chat
+Sign in - Google Accounts
+-AR-15-[RUS] — 18:18
+import os
+import asyncio
+import uuid
+from typing import Dict, Any, List, Tuple
+from aiogram import Bot, Dispatcher, types, F
+from aiogram.filters import CommandStart, Command
+Раскрыть
+main.py
+23 кб
+Чаты:
+Бот должен админить группу (мат-фильр, игры или активности в чате)
+Бот должен вести канал. (публикация материалов в канале, через админку или собственная генерация)
+Бот должен взаимодействовать с пользователями в личных сообщениях.
+Во всех чатах бот должен иметь уникальное поведение.
+Контент:
+Бот должен подгружать данные как минимум с одного сервиса или сайта. (API, requests)
+Бот должен уметь отпрвлять не только текстовые сообщения, но так же и другие виды контента (картинки, стикеры и др.)
+Фунционал:
+Бот должен уметь выстраивать диалоги с пользователями (FSM)
+Бот должен иметь клавиатуру.
+Бот должен взаимодействовать с базой данных.
+Бот должен быть стабилен и иметь внутри обработку частых ошибок.
+Бот должен иметь логгирование.
+Бот должен иметь полную и понятную документацию.
+denisbrave
+[SCUG]
+ — 18:24
 import os
 import asyncio
 import uuid
 from typing import Dict, Any, List, Tuple
 from aiogram import Bot, Dispatcher, types, F
 from aiogram.filters import CommandStart, Command, BaseFilter
+Раскрыть
+main.py
+27 кб
+denisbrave
+[SCUG]
+ — 19:01
+"""
+Telegram Bot Calendar
+
+This bot serves as a personal event calendar with reminders, group moderation features,
+and content delivery to a specified channel.
+Раскрыть
+code (2).py
+31 кб
+-AR-15-[RUS] — 19:07
+8131241943:AAERKUv-MNumF4uujfc-K_baBD72FaZ3jpI
+t.me/tgtestcumbot
+@tgtestcumbot
+1337142737
+1337142737
+-AR-15-[RUS] — 19:23
+CAACAgIAAxkBAAEBYNFoXCJp4mcG9XYnIKdVlkv6QLQZ6gAC2hsAAtRm2EqdMVAzz83yujYE
+-4661249995
+-1002531397827
+denisbrave
+[SCUG]
+ — 19:51
+Тип вложенного файла: unknown
+.env
+209 bytes
+"""
+Telegram Bot Calendar
+
+This bot serves as a personal event calendar with reminders, group moderation features,
+and content delivery to a specified channel.
+Раскрыть
+code (2).py
+32 кб
+﻿
+"""
+Telegram Bot Calendar
+
+This bot serves as a personal event calendar with reminders, group moderation features,
+and content delivery to a specified channel.
+
+Features:
+- Private Chat:
+  - Add events via an interactive calendar (/calendar).
+  - View, manage, and delete events (/myevents).
+  - Set one-time reminders for events.
+  - Clear all personal events (/clearevents).
+- Group Chat:
+  - Automatic deletion of messages containing forbidden words.
+  - Fun commands like /play (dice).
+- Channel Management:
+  - Admins can post messages to a configured channel (/post).
+  - Automatic daily posts with a random quote.
+- General Features:
+  - Fetches random quotes and images from external APIs.
+  - FSM for multi-step dialogues (setting reminders).
+  - Comprehensive logging using Loguru.
+  - Asynchronous database operations with aiosqlite.
+  - Robust error handling and background tasks for reminders and daily posts.
+
+Setup:
+1.  Install dependencies:
+    pip install aiogram aiosqlite aiohttp python-dotenv loguru aiogram-calendar
+2.  Create a .env file with the following variables:
+    - TOKEN: Your Telegram bot token.
+    - ADMIN_USER_IDS: Comma-separated list of admin user IDs.
+    - TARGET_CHANNEL_ID: The ID of the channel for daily posts.
+    - STICKER_ID: The file_id for the sticker used in /sticker. (Optional)
+"""
+import os
+import asyncio
+import aiohttp
+import aiosqlite
+import html
+import uuid
+from typing import Dict, Any, List, Tuple
+from aiogram import Bot, Dispatcher, types, F
+from aiogram.filters import CommandStart, Command, BaseFilter
 from aiogram.enums import ChatType
 from aiogram.types import ReplyKeyboardRemove, InlineKeyboardMarkup, InlineKeyboardButton, Message
+from aiogram.fsm.context import FSMContext
+from aiogram.fsm.state import State, StatesGroup
+from aiogram.fsm.storage.memory import MemoryStorage
 from aiogram_calendar import SimpleCalendar, SimpleCalendarCallback
-from datetime import datetime
+from datetime import datetime, timedelta
 from dotenv import load_dotenv
 from loguru import logger
-import sqlite3
-from contextlib import closing
-import random
-import aiohttp
+from aiogram.exceptions import TelegramBadRequest
 
 # --- INITIAL SETUP ---
 logger.add(
@@ -28,7 +294,7 @@ load_dotenv()
 TOKEN = os.getenv("TOKEN")
 ADMIN_USER_IDS = [int(admin_id) for admin_id in os.getenv("ADMIN_USER_IDS", "").split(',') if admin_id]
 TARGET_CHANNEL_ID = os.getenv("TARGET_CHANNEL_ID")
-
+STICKER_ID = os.getenv("STICKER_ID")
 
 if not TOKEN:
     raise ValueError("Не найден токен бота в переменных окружения!")
@@ -36,15 +302,28 @@ if not ADMIN_USER_IDS:
     logger.warning("Не найдены ID администраторов в переменных окружения! Некоторые команды будут недоступны.")
 if not TARGET_CHANNEL_ID:
     logger.warning("Не найден ID целевого канала! Публикация в канал будет невозможна.")
+if not STICKER_ID:
+    logger.warning("Не найден STICKER_ID в переменных окружения! Команда /sticker будет недоступна.")
 
-# --- BOT & DISPATCHER ---
+# --- BOT & DISPATCHER & FSM ---
+# ### FIX: Using MemoryStorage for FSM. For production, consider RedisStorage.
+storage = MemoryStorage()
 bot = Bot(TOKEN)
-dp = Dispatcher()
-dp['aiosession'] = aiohttp.ClientSession()
+dp = Dispatcher(storage=storage)
 
-# --- GLOBAL STATE & CONSTANTS ---
-remind_data = {}
-FORBIDDEN_WORDS = {"дурак", "идиот", "хам"} # Simple profanity filter list
+# --- FSM STATES ---
+class ReminderStates(StatesGroup):
+    awaiting_time = State()
+
+# --- GLOBAL CONSTANTS ---
+FORBIDDEN_WORDS = {"дурак", "идиот", "хам",
+                   "блять", "пизда", "хуй",
+                    "сука", "ебать", "еблан",
+                    "пидор", "пидорас", "говно",
+                     "мразь", "тупой", "тупица", 
+                     "козел", "козлина", "сволочь",
+                     "сучка", "блядина", "ебать тебя в рот",
+                     "ебать тебя в жопу"}
 
 # Prefixes
 DELETE_PREFIX = "del_"
@@ -54,52 +333,63 @@ PAGE_PREFIX = "page_"
 REMIND_PREFIX = "rem_"
 ITEMS_PER_PAGE = 5
 DB_NAME = "events.db"
-REMINDER_CHECK_INTERVAL = 60 # Check every minute
-DAILY_POST_TIME = "09:00" # Time for daily post in channel
+REMINDER_CHECK_INTERVAL = 60
+DAILY_POST_TIME_STR = "09:00"
 
 # --- CUSTOM FILTERS ---
 class IsAdmin(BaseFilter):
-    """Фильтр для проверки, является ли пользователь администратором бота"""
     async def __call__(self, message: Message) -> bool:
         return message.from_user.id in ADMIN_USER_IDS
 
 # --- SERVICE CLASSES ---
 class Database:
-    """Класс для работы с базой данных"""
+    """### REFACTOR: Класс для асинхронной работы с базой данных (aiosqlite)"""
     @staticmethod
-    def init_db():
-        with closing(sqlite3.connect(DB_NAME)) as conn:
-            with conn:
-                conn.execute("""
-                    CREATE TABLE IF NOT EXISTS events (
-                        user_id INTEGER, event_id TEXT, date TEXT, text TEXT, remind_time TEXT,
-                        PRIMARY KEY (user_id, event_id)
-                    )
-                """)
+    async def init_db():
+        async with aiosqlite.connect(DB_NAME) as db:
+            await db.execute("""
+                CREATE TABLE IF NOT EXISTS events (
+                    user_id INTEGER, event_id TEXT, date TEXT, text TEXT, remind_time TEXT,
+                    PRIMARY KEY (user_id, event_id),
+                    UNIQUE(user_id, date)
+                )
+            """)
+            await db.commit()
 
     @staticmethod
     async def execute_query(query: str, params: tuple = (), fetch: bool = False) -> Any:
-        with closing(sqlite3.connect(DB_NAME)) as conn:
-            conn.row_factory = sqlite3.Row
-            cursor = conn.cursor()
-            cursor.execute(query, params)
-            if fetch:
-                return cursor.fetchall()
-            conn.commit()
-            return cursor.rowcount
+        async with aiosqlite.connect(DB_NAME) as db:
+            db.row_factory = aiosqlite.Row
+            async with db.execute(query, params) as cursor:
+                if fetch:
+                    return await cursor.fetchall()
+                await db.commit()
+                return cursor.rowcount
 
 class EventManager:
     """Класс для управления событиями"""
     @staticmethod
-    async def get_user_events(user_id: int) -> Dict[str, Dict[str, str]]:
-        rows = await Database.execute_query("SELECT * FROM events WHERE user_id = ?", (user_id,), fetch=True)
-        return {row["event_id"]: dict(row) for row in rows} if rows else {}
+    async def get_user_events(user_id: int) -> List[aiosqlite.Row]:
+        return await Database.execute_query(
+            "SELECT * FROM events WHERE user_id = ? ORDER BY date(substr(date, 7, 4) || '-' || substr(date, 4, 2) || '-' || substr(date, 1, 2))",
+            (user_id,),
+            fetch=True
+        )
 
     @staticmethod
-    async def add_event(user_id: int, event_id: str, date: str, text: str = "Мое событие", remind_time: str = None):
+    async def get_single_event(user_id: int, event_id: str) -> aiosqlite.Row | None:
+        rows = await Database.execute_query(
+            "SELECT * FROM events WHERE user_id = ? AND event_id = ?",
+            (user_id, event_id),
+            fetch=True
+        )
+        return rows[0] if rows else None
+
+    @staticmethod
+    async def add_event(user_id: int, event_id: str, date: str, text: str = "Мое событие"):
         await Database.execute_query(
-            "INSERT INTO events (user_id, event_id, date, text, remind_time) VALUES (?, ?, ?, ?, ?)",
-            (user_id, event_id, date, text, remind_time)
+            "INSERT INTO events (user_id, event_id, date, text, remind_time) VALUES (?, ?, ?, ?, NULL)",
+            (user_id, event_id, date, text)
         )
 
     @staticmethod
@@ -110,39 +400,56 @@ class EventManager:
         ) > 0
 
     @staticmethod
+    async def clear_event_reminder(user_id: int, event_id: str) -> bool:
+        return await Database.execute_query(
+            "UPDATE events SET remind_time = NULL WHERE user_id = ? AND event_id = ?",
+            (user_id, event_id)
+        ) > 0
+
+    @staticmethod
     async def delete_event(user_id: int, event_id: str) -> bool:
         return await Database.execute_query("DELETE FROM events WHERE user_id = ? AND event_id = ?", (user_id, event_id)) > 0
 
     @staticmethod
     async def clear_user_events(user_id: int) -> int:
-        count = (await Database.execute_query("SELECT COUNT(*) FROM events WHERE user_id = ?", (user_id,), fetch=True))[0][0]
-        if count > 0:
-            await Database.execute_query("DELETE FROM events WHERE user_id = ?", (user_id,))
-        return count
+        return await Database.execute_query("DELETE FROM events WHERE user_id = ?", (user_id,))
 
     @staticmethod
     async def event_exists(user_id: int, date: str) -> bool:
         return bool(await Database.execute_query("SELECT 1 FROM events WHERE user_id = ? AND date = ? LIMIT 1", (user_id, date), fetch=True))
 
     @staticmethod
-    async def get_events_for_reminder() -> List[Tuple[int, str, str]]:
-        now = datetime.now().strftime("%d.%m.%Y %H:%M")
-        rows = await Database.execute_query("SELECT user_id, text, date FROM events WHERE remind_time = ?", (now,), fetch=True)
-        return [(row['user_id'], row['text'], row['date']) for row in rows]
+    async def get_events_for_reminder() -> List[aiosqlite.Row]:
+        now_str = datetime.now().strftime("%Y-%m-%d %H:%M")
+        return await Database.execute_query(
+            "SELECT * FROM events WHERE remind_time IS NOT NULL AND remind_time <= ?",
+            (now_str,),
+            fetch=True
+        )
 
 class ExternalContentManager:
     """Класс для получения контента с внешних API"""
     @staticmethod
     async def get_random_quote(session: aiohttp.ClientSession) -> str:
-        try:
-            async with session.get('https://api.quotable.io/random') as response:
-                if response.status == 200:
+        retries = 3
+        delay = 2
+        for i in range(retries):
+            try:
+                async with session.get('https://api.quotable.io/random', timeout=10) as response:
+                    response.raise_for_status()
                     data = await response.json()
                     return f"\"{data['content']}\" - {data['author']}"
-                return "Не удалось получить цитату дня."
-        except Exception as e:
-            logger.error(f"Error fetching quote: {e}")
-            return "Ошибка при загрузке цитаты."
+            except (aiohttp.ClientError, asyncio.TimeoutError) as e:
+                logger.error(f"Attempt {i + 1}/{retries} failed to fetch quote: {e}")
+                if i < retries - 1:
+                    await asyncio.sleep(delay * (i + 1))
+                else:
+                    logger.error("All retries failed for fetching quote.")
+                    return "Не удалось получить цитату дня из-за сетевой ошибки."
+            except Exception as e:
+                logger.error(f"Unexpected error fetching quote: {e}")
+                return "Ошибка при загрузке цитаты."
+        return "Не удалось получить цитату после нескольких попыток."
 
     @staticmethod
     async def get_random_image_url() -> str:
@@ -152,27 +459,23 @@ class KeyboardManager:
     """Класс для управления клавиатурами"""
     @staticmethod
     async def get_events_keyboard(user_id: int, page: int = 0) -> InlineKeyboardMarkup:
-        events = await EventManager.get_user_events(user_id)
-        events_list = list(events.items())
+        events_list = await EventManager.get_user_events(user_id)
         total_pages = (len(events_list) + ITEMS_PER_PAGE - 1) // ITEMS_PER_PAGE
         page_events = events_list[page*ITEMS_PER_PAGE:(page+1)*ITEMS_PER_PAGE]
-        
+
         keyboard = []
-        for event_id, event_data in page_events:
-            row = [InlineKeyboardButton(text=f"❌ {event_data['date']}", callback_data=f"{DELETE_PREFIX}{event_id}")]
+        for event_data in page_events:
+            row = [InlineKeyboardButton(text=f"❌ {event_data['date']}", callback_data=f"{DELETE_PREFIX}{event_data['event_id']}")]
             if not event_data['remind_time']:
-                row.append(InlineKeyboardButton(text="⏰ Напомнить", callback_data=f"{REMIND_PREFIX}{event_id}"))
+                row.append(InlineKeyboardButton(text="⏰ Напомнить", callback_data=f"{REMIND_PREFIX}{event_data['event_id']}"))
             keyboard.append(row)
-        
+
         pagination_buttons = []
-        if page > 0:
-            pagination_buttons.append(InlineKeyboardButton(text="⬅️ Назад", callback_data=f"{PAGE_PREFIX}{page-1}"))
-        if page < total_pages - 1:
-            pagination_buttons.append(InlineKeyboardButton(text="Вперед ➡️", callback_data=f"{PAGE_PREFIX}{page+1}"))
-        
+        if page > 0: pagination_buttons.append(InlineKeyboardButton(text="⬅️ Назад", callback_data=f"{PAGE_PREFIX}{page-1}"))
+        if page < total_pages - 1: pagination_buttons.append(InlineKeyboardButton(text="Вперед ➡️", callback_data=f"{PAGE_PREFIX}{page+1}"))
         if pagination_buttons: keyboard.append(pagination_buttons)
         if events_list: keyboard.append([InlineKeyboardButton(text="🗑️ Очистить все", callback_data="clear_all")])
-        
+
         return InlineKeyboardMarkup(inline_keyboard=keyboard)
 
     @staticmethod
@@ -190,107 +493,135 @@ class MessageManager:
     """Класс для управления сообщениями"""
     @staticmethod
     async def get_user_events_text(user_id: int, page: int) -> Tuple[str, int]:
-        events = await EventManager.get_user_events(user_id)
-        events_list = sorted(list(events.items()), key=lambda item: datetime.strptime(item[1]['date'], '%d.%m.%Y'))
+        events_list = await EventManager.get_user_events(user_id)
         total_pages = (len(events_list) + ITEMS_PER_PAGE - 1) // ITEMS_PER_PAGE
         page_events = events_list[page*ITEMS_PER_PAGE:(page+1)*ITEMS_PER_PAGE]
-        
-        events_text = "📅 Ваши события:\n\n"
+
         if not page_events: return "📭 У вас нет сохраненных событий.", 0
-        
-        for i, (event_id, event_data) in enumerate(page_events, page*ITEMS_PER_PAGE + 1):
+
+        events_text = "📅 Ваши события:\n\n"
+        for i, event_data in enumerate(page_events, page*ITEMS_PER_PAGE + 1):
             reminder_info = f" (⏰ {event_data['remind_time'].split()[1]})" if event_data['remind_time'] else ""
             events_text += f"{i}. {event_data['date']} - {event_data['text']}{reminder_info}\n"
-        
+
         return events_text, total_pages
 
     @staticmethod
     async def display_events_page(message: types.Message | types.CallbackQuery, user_id: int, page: int):
         events_text, total_pages = await MessageManager.get_user_events_text(user_id, page)
         keyboard = await KeyboardManager.get_events_keyboard(user_id, page)
-        
         display_text = events_text
-        if total_pages > 1:
-            display_text += f"\nСтраница {page+1}/{total_pages}"
+        if total_pages > 1: display_text += f"\nСтраница {page+1}/{total_pages}"
         
-        if isinstance(message, types.CallbackQuery):
-            await message.message.edit_text(display_text, reply_markup=keyboard)
-        else:
-            await message.answer(display_text, reply_markup=keyboard)
+        target_message = message.message if isinstance(message, types.CallbackQuery) else message
+        try:
+            if isinstance(message, types.CallbackQuery):
+                await message.answer() # Answer callback query to remove loading animation
+            await target_message.edit_text(display_text, reply_markup=keyboard)
+        except TelegramBadRequest as e:
+            if "message is not modified" not in e.message:
+                logger.error(f"Error editing message: {e}, attempting to send new one.")
+                await target_message.answer(display_text, reply_markup=keyboard)
+        except Exception: # If edit fails for any other reason (e.g. old message)
+            await target_message.answer(display_text, reply_markup=keyboard)
 
 # --- BACKGROUND TASKS ---
 async def remind_checker():
-    """Проверяет и отправляет напоминания пользователям"""
+    """### FIX: Проверяет и отправляет напоминания, затем удаляет их из очереди"""
     while True:
         try:
-            events = await EventManager.get_events_for_reminder()
-            for user_id, text, date in events:
+            events_to_remind = await EventManager.get_events_for_reminder()
+            for event in events_to_remind:
                 try:
-                    await bot.send_message(user_id, f"⏰ **НАПОМИНАНИЕ** ⏰\n\nСобытие: {text}\nДата: {date}")
+                    text = (
+                        f"⏰ <b>НАПОМИНАНИЕ</b> ⏰\n\n"
+                        f"Событие: {html.escape(event['text'])}\n"
+                        f"Дата: {event['date']}"
+                    )
+                    await bot.send_message(
+                        event['user_id'],
+                        text,
+                        parse_mode="HTML"
+                    )
+                    # Clear reminder so it's not sent again
+                    await EventManager.clear_event_reminder(event['user_id'], event['event_id'])
+                    logger.info(f"Sent reminder for event {event['event_id']} to user {event['user_id']}")
                 except Exception as e:
-                    logger.error(f"Ошибка при отправке напоминания пользователю {user_id}: {e}")
+                    logger.error(f"Ошибка при отправке напоминания пользователю {event['user_id']}: {e}")
         except Exception as e:
             logger.error(f"Критическая ошибка в `remind_checker`: {e}")
         await asyncio.sleep(REMINDER_CHECK_INTERVAL)
 
+async def _calculate_sleep_time(hour_str: str) -> int:
+    """Calculates seconds until the next target time."""
+    now = datetime.now()
+    h, m = map(int, hour_str.split(':'))
+    target_today = now.replace(hour=h, minute=m, second=0, microsecond=0)
+    target = target_today if target_today > now else target_today + timedelta(days=1)
+    return (target - now).total_seconds()
+
 async def daily_channel_post(session: aiohttp.ClientSession):
-    """Ежедневно отправляет пост в канал"""
+    """### FIX: Ежедневно отправляет пост в канал, используя точный расчет времени и ретраи"""
     while True:
-        now = datetime.now()
-        if now.strftime("%H:%M") == DAILY_POST_TIME:
-            if not TARGET_CHANNEL_ID:
-                logger.warning("Пропуск ежедневного поста: не задан TARGET_CHANNEL_ID.")
-                await asyncio.sleep(60) # Проверить снова через минуту
-                continue
-            
-            quote = await ExternalContentManager.get_random_quote(session)
+        if not TARGET_CHANNEL_ID:
+            logger.warning("Пропуск ежедневного поста: не задан TARGET_CHANNEL_ID. Повторная проверка через час.")
+            await asyncio.sleep(3600)
+            continue
+
+        sleep_seconds = await _calculate_sleep_time(DAILY_POST_TIME_STR)
+        logger.info(f"Daily post scheduled. Sleeping for {sleep_seconds:.0f} seconds.")
+        await asyncio.sleep(sleep_seconds)
+
+        # Retry logic in case of network errors
+        for attempt in range(3):
             try:
-                await bot.send_message(TARGET_CHANNEL_ID, f"**Цитата дня** ☀️\n\n{quote}")
+                quote = await ExternalContentManager.get_random_quote(session)
+                text = f"<b>Цитата дня</b> ☀️\n\n{html.escape(quote)}"
+                await bot.send_message(TARGET_CHANNEL_ID, text, parse_mode="HTML")
                 logger.info(f"Опубликована цитата дня в канале {TARGET_CHANNEL_ID}.")
+                await asyncio.sleep(60) # Sleep for a minute to avoid double-posting
+                break # Success
             except Exception as e:
-                logger.error(f"Не удалось отправить сообщение в канал {TARGET_CHANNEL_ID}: {e}")
-            await asyncio.sleep(86340) # Пауза почти на сутки
-        await asyncio.sleep(30) # Проверять время каждые 30 секунд
+                logger.error(f"Не удалось отправить сообщение в канал (попытка {attempt + 1}/3): {e}.")
+                if attempt < 2:
+                    await asyncio.sleep(300) # Wait 5 minutes before retrying
+                else:
+                    logger.error("Все попытки отправки сообщения в канал не увенчались успехом.")
+
 
 # --- COMMAND HANDLERS ---
 @dp.message(CommandStart())
 async def start_cmd(message: types.Message):
-    if message.chat.type == ChatType.PRIVATE:
-        await message.answer(
-            "📅 **Личный бот-календарь**\n\nЯ помогу вам сохранить важные даты и напомню о них.\n"
-            "Используйте /help, чтобы увидеть все команды."
-        )
-    else: # Group or Supergroup
-        await message.answer(
-            "👋 Привет, группа!\n\nЯ бот-помощник. В группах я умею фильтровать сообщения и играть в игры.\n"
-            "Чтобы узнать больше, напишите /help."
-        )
+    await message.answer(
+        "📅 <b>Личный бот-календарь</b>\n\nЯ помогу вам сохранить важные даты и напомню о них.\n"
+        "В группах я умею фильтровать сообщения.\n"
+        "Используйте /help, чтобы увидеть все команды.",
+        parse_mode="HTML"
+    )
 
 @dp.message(Command("help"))
 async def help_cmd(message: types.Message):
     if message.chat.type == ChatType.PRIVATE:
         await message.answer(
-            "**Команды для личного пользования:**\n"
-            "/calendar - Добавить событие в календарь\n"
+            "<b>Команды для личного пользования:</b>\n"
+            "/calendar - Добавить событие\n"
             "/myevents - Показать мои события\n"
-            "/today - Показать сегодняшнюю дату\n"
             "/clearevents - Очистить все мои события\n\n"
-            "**Развлекательные команды:**\n"
+            "<b>Развлекательные команды:</b>\n"
             "/quote - Получить случайную цитату\n"
             "/image - Получить случайное изображение\n"
-            "/sticker - Получить забавный стикер"
+            "/sticker - Получить забавный стикер",
+            parse_mode="HTML"
         )
-    else: # Group or Supergroup
+    else:
         await message.answer(
-            "**Команды для групп:**\n"
+            "<b>Команды для групп:</b>\n"
             "/help - Показать это сообщение\n"
-            "/play - Сыграть в кости\n\n"
-            "Также я автоматически удаляю сообщения с нецензурной лексикой (если у меня есть права администратора)."
+            "/play - Сыграть в кости\n"
+            "/quote, /image, /sticker - Развлекательные команды\n\n"
+            "Я также удаляю сообщения с некоторыми плохими словами (если есть права администратора).",
+            parse_mode="HTML"
         )
-
-@dp.message(F.chat.type == ChatType.PRIVATE, Command("today"))
-async def today_cmd(message: types.Message):
-    await message.answer(f"📆 Сегодня: {datetime.now().strftime('%d.%m.%Y')}")
 
 @dp.message(F.chat.type == ChatType.PRIVATE, Command("calendar"))
 async def calendar_cmd(message: types.Message):
@@ -310,22 +641,37 @@ async def clear_events_cmd(message: types.Message):
     else:
         await message.answer("У вас нет событий для удаления.")
 
-# --- NEW CONTENT & GROUP COMMANDS ---
 @dp.message(Command("quote"))
 async def quote_cmd(message: types.Message, aiosession: aiohttp.ClientSession):
-    quote = await ExternalContentManager.get_random_quote(aiosession)
-    await message.answer(quote)
+    await message.answer(await ExternalContentManager.get_random_quote(aiosession))
 
 @dp.message(Command("image"))
 async def image_cmd(message: types.Message):
-    image_url = await ExternalContentManager.get_random_image_url()
-    await message.answer_photo(image_url, caption=f"Ваше случайное изображение!")
+    await message.answer_photo(await ExternalContentManager.get_random_image_url(), caption="Ваше случайное изображение!")
 
 @dp.message(Command("sticker"))
 async def sticker_cmd(message: types.Message):
-    # This is a hardcoded sticker ID. You can find IDs by sending a sticker to a bot like @JsonDumpBot
-    sticker_id = "CAACAgIAAxkBAAEoD_ZmLc9r5U3g1tq7L3QXz55mMUSVjwACeAIAAladvQpG48o-sM84FTQE"
-    await message.answer_sticker(sticker_id)
+    # ### FIX: Sticker ID is now configurable and has error handling.
+    if not STICKER_ID:
+        await message.answer(
+            "Команда /sticker не настроена. "
+            "Администратор должен указать `STICKER_ID` в файле `.env`."
+        )
+        return
+
+    try:
+        await message.answer_sticker(STICKER_ID)
+    except TelegramBadRequest:
+        logger.error(f"Invalid STICKER_ID: {STICKER_ID}. Failed to send sticker.")
+        await message.answer(
+            '''Не удалось отправить стикер. Возможно, указан неверный `STICKER_ID`.
+
+<b>Как получить ID стикера:</b>
+1. Отправьте нужный стикер боту @JsonDumpBot
+2. Найдите в ответе поле `file_id` у стикера.
+3. Скопируйте это значение и вставьте в `.env` файл как `STICKER_ID`.''',
+            parse_mode="HTML"
+        )
 
 @dp.message(F.chat.type.in_({ChatType.GROUP, ChatType.SUPERGROUP}), Command("play"))
 async def play_cmd(message: types.Message):
@@ -333,67 +679,48 @@ async def play_cmd(message: types.Message):
 
 @dp.message(IsAdmin(), Command("post"))
 async def post_to_channel_cmd(message: types.Message):
-    if not TARGET_CHANNEL_ID:
-        await message.reply("Ошибка: ID целевого канала не настроен.")
-        return
-    
+    if not TARGET_CHANNEL_ID: return await message.reply("Ошибка: ID целевого канала не настроен.")
     command_parts = message.text.split(maxsplit=1)
-    if len(command_parts) < 2:
-        await message.reply("Пожалуйста, укажите текст для публикации. \nПример: `/post Привет, канал!`")
-        return
-        
-    text_to_post = command_parts[1]
+    if len(command_parts) < 2: return await message.reply("Пример: `/post Привет, канал!`")
+    
     try:
-        await bot.send_message(TARGET_CHANNEL_ID, text_to_post)
+        await bot.send_message(TARGET_CHANNEL_ID, command_parts[1])
         await message.reply("✅ Сообщение успешно отправлено в канал.")
         logger.info(f"Admin {message.from_user.id} posted to channel {TARGET_CHANNEL_ID}.")
     except Exception as e:
         await message.reply(f"❌ Не удалось отправить сообщение: {e}")
         logger.error(f"Failed to post to channel by admin {message.from_user.id}: {e}")
 
-# --- GROUP MESSAGE HANDLER (PROFANITY FILTER) ---
-@dp.message(F.chat.type.in_({ChatType.GROUP, ChatType.SUPERGROUP}), F.text)
-async def filter_group_messages(message: types.Message):
-    # Reminder state check for private chat (can be triggered from group if user replies to bot)
-    if message.from_user.id in remind_data:
-        await process_reminder_time(message) # Process reminder time first
-        return
-        
-    text = message.text.lower()
-    if any(word in text for word in FORBIDDEN_WORDS):
-        try:
-            await message.delete()
-            await message.answer(f"Сообщение от {message.from_user.full_name} удалено за нарушение правил чата.")
-            logger.info(f"Deleted message from {message.from_user.id} in group {message.chat.id} for profanity.")
-        except Exception as e:
-            logger.warning(f"Could not delete message in group {message.chat.id}. Maybe no admin rights? Error: {e}")
-
-# --- CALLBACK HANDLERS (UNCHANGED CORE LOGIC) ---
+# --- CALLBACK HANDLERS ---
 @dp.callback_query(SimpleCalendarCallback.filter())
 async def process_simple_calendar(cb: types.CallbackQuery, callback_data: SimpleCalendarCallback):
     selected, date = await SimpleCalendar().process_selection(cb, callback_data)
     if not selected: return
-    
-    user_id = cb.from_user.id
-    date_str = date.strftime('%d.%m.%Y')
-    
-    if await EventManager.event_exists(user_id, date_str):
-        await cb.answer(f"⚠️ Дата {date_str} уже есть в календаре!", show_alert=True)
-    else:
+
+    user_id, date_str = cb.from_user.id, date.strftime('%d.%m.%Y')
+
+    try:
         event_id = str(uuid.uuid4())
         await EventManager.add_event(user_id, event_id, date_str)
         logger.success(f"User {user_id} added new date: {date_str} (ID: {event_id})")
         await cb.message.edit_text(f"✅ Добавлена дата: {date_str}", reply_markup=KeyboardManager.get_back_keyboard())
+    except aiosqlite.IntegrityError:
+        logger.warning(f"User {user_id} tried to add duplicate date {date_str}")
+        await cb.answer(f"⚠️ У вас уже есть событие на {date_str}!", show_alert=True)
+    except Exception as e:
+        logger.error(f"Error adding event for user {user_id}: {e}")
+        await cb.answer("Произошла ошибка при добавлении события.", show_alert=True)
 
-# --- Other callback handlers for event management ---
+
 @dp.callback_query(F.data.startswith(DELETE_PREFIX))
 async def delete_event_handler(cb: types.CallbackQuery):
-    event_id = cb.data[len(DELETE_PREFIX):]
-    user_id = cb.from_user.id
-    events = await EventManager.get_user_events(user_id)
-    if event_id not in events: return await cb.answer("Событие не найдено!", show_alert=True)
+    event_id = cb.data.split('_', 1)[1]
+    event = await EventManager.get_single_event(cb.from_user.id, event_id)
+    if not event: 
+        return await cb.answer("Событие не найдено!", show_alert=True)
+    
     await cb.message.edit_text(
-        f"Вы точно хотите удалить событие на {events[event_id]['date']}?",
+        f"Вы точно хотите удалить событие на {event['date']}?",
         reply_markup=KeyboardManager.get_confirmation_keyboard(f"{CONFIRM_PREFIX}{event_id}", f"{CANCEL_PREFIX}{event_id}")
     )
 
@@ -401,91 +728,114 @@ async def delete_event_handler(cb: types.CallbackQuery):
 async def handle_confirmation(cb: types.CallbackQuery):
     prefix, event_id = cb.data.split("_", 1)
     user_id = cb.from_user.id
-    events = await EventManager.get_user_events(user_id)
-    if event_id not in events: return await cb.answer("Событие не найдено!", show_alert=True)
+    event = await EventManager.get_single_event(user_id, event_id)
+    if not event:
+        return await cb.answer("Событие не найдено!", show_alert=True)
 
-    event_date = events[event_id]['date']
-    if prefix == CONFIRM_PREFIX[0:-1]: # 'cfm'
+    if prefix == "cfm":
         if await EventManager.delete_event(user_id, event_id):
-            logger.success(f"User {user_id} deleted event {event_id} ({event_date})")
-            await cb.message.edit_text(f"🗑️ Событие на {event_date} удалено!", reply_markup=KeyboardManager.get_back_keyboard())
+            logger.success(f"User {user_id} deleted event {event_id} ({event['date']})")
+            await cb.message.edit_text(f"🗑️ Событие на {event['date']} удалено!", reply_markup=KeyboardManager.get_back_keyboard())
         else:
             await cb.message.edit_text("Ошибка при удалении", reply_markup=KeyboardManager.get_back_keyboard())
-    else: # 'cnl'
-        await cb.message.edit_text(f"❌ Удаление отменено", reply_markup=KeyboardManager.get_back_keyboard())
+    else:  # "cnl"
+        await cb.message.edit_text("❌ Удаление отменено", reply_markup=KeyboardManager.get_back_keyboard())
 
 @dp.callback_query(F.data.startswith(REMIND_PREFIX))
-async def set_reminder_handler(cb: types.CallbackQuery):
-    event_id = cb.data[len(REMIND_PREFIX):]
+async def set_reminder_handler(cb: types.CallbackQuery, state: FSMContext):
+    event_id = cb.data.split('_', 1)[1]
     user_id = cb.from_user.id
-    events = await EventManager.get_user_events(user_id)
-    if event_id not in events: return await cb.answer("Событие не найдено!", show_alert=True)
+    event = await EventManager.get_single_event(user_id, event_id)
+    if not event: return await cb.answer("Событие не найдено!", show_alert=True)
     
-    remind_data[user_id] = {"remind_event_id": event_id}
-    await cb.message.answer(f"⏰ Введите время напоминания для {events[event_id]['date']} (в формате ЧЧ:ММ):")
+    await state.set_state(ReminderStates.awaiting_time)
+    await state.update_data(remind_event_id=event_id, event_date=event['date'])
+    await cb.message.answer(f"⏰ Введите время напоминания для {event['date']} (в формате ЧЧ:ММ):")
     await cb.answer()
-
-@dp.message(F.chat.type == ChatType.PRIVATE, F.text)
-async def process_reminder_time(message: types.Message):
-    user_id = message.from_user.id
-    if user_id not in remind_data or "remind_event_id" not in remind_data[user_id]:
-        # This is not a reminder time, maybe some other text, ignore or handle differently
-        await message.reply("Неизвестная команда. Используйте /help для списка команд.")
-        return
-
-    try:
-        time_obj = datetime.strptime(message.text.strip(), "%H:%M").time()
-        event_id = remind_data[user_id]["remind_event_id"]
-        events = await EventManager.get_user_events(user_id)
-        if event_id not in events:
-            await message.answer("Событие не найдено.")
-            return
-
-        event_date = events[event_id]['date']
-        remind_time_str = f"{event_date} {time_obj.strftime('%H:%M')}"
-        
-        if await EventManager.update_event_reminder(user_id, event_id, remind_time_str):
-            await message.answer(f"✅ Напоминание для события {event_date} установлено на {time_obj.strftime('%H:%M')}.")
-            logger.info(f"User {user_id} set reminder for {event_id} at {remind_time_str}")
-        else:
-            await message.answer("❌ Ошибка при установке напоминания.")
-    except ValueError:
-        await message.answer("Неправильный формат времени. Пожалуйста, используйте ЧЧ:ММ (например, 09:30 или 18:00).")
-    except Exception as e:
-        logger.error(f"Error setting reminder for user {user_id}: {e}")
-        await message.answer("Произошла непредвиденная ошибка.")
-    finally:
-        if user_id in remind_data:
-            del remind_data[user_id]
-
 
 @dp.callback_query(F.data == "confirm_clear_all")
 async def confirm_clear_all_handler(cb: types.CallbackQuery):
-    user_id = cb.from_user.id
-    count = await EventManager.clear_user_events(user_id)
+    count = await EventManager.clear_user_events(cb.from_user.id)
     text = f"🗑️ Удалено {count} событий!" if count > 0 else "У вас не было событий для удаления."
     await cb.message.edit_text(text, reply_markup=None)
-    logger.success(f"User {user_id} cleared all events ({count} removed)")
+    logger.success(f"User {cb.from_user.id} cleared all events ({count} removed)")
 
 @dp.callback_query(F.data == "cancel_clear_all")
 async def cancel_clear_all_handler(cb: types.CallbackQuery):
     await cb.message.edit_text("❌ Удаление всех событий отменено.", reply_markup=KeyboardManager.get_back_keyboard())
 
+@dp.callback_query(F.data == "clear_all")
+async def clear_all_callback_handler(cb: types.CallbackQuery):
+    """Handles the 'Clear All' button from the events list."""
+    if await EventManager.get_user_events(cb.from_user.id):
+        await cb.message.edit_text(
+            "Вы уверены, что хотите удалить ВСЕ события?",
+            reply_markup=KeyboardManager.get_confirmation_keyboard("confirm_clear_all", "cancel_clear_all")
+        )
+        await cb.answer()
+    else:
+        await cb.answer("У вас нет событий для удаления.", show_alert=True)
+
 @dp.callback_query(F.data.startswith(PAGE_PREFIX))
 async def handle_pagination(cb: types.CallbackQuery):
-    page = int(cb.data[len(PAGE_PREFIX):])
+    page = int(cb.data.split('_', 1)[1])
     await MessageManager.display_events_page(cb, cb.from_user.id, page)
 
 @dp.callback_query(F.data == "back_to_events")
 async def back_to_events_handler(cb: types.CallbackQuery):
     await MessageManager.display_events_page(cb, cb.from_user.id, 0)
 
+# --- MESSAGE HANDLERS ---
+@dp.message(F.chat.type.in_({ChatType.GROUP, ChatType.SUPERGROUP}), F.text)
+async def filter_group_messages(message: types.Message):
+    """### FIX: Handler only contains group-related logic now."""
+    if any(word in message.text.lower() for word in FORBIDDEN_WORDS):
+        try:
+            await message.delete()
+            logger.info(f"Deleted message from {message.from_user.id} in group {message.chat.id} for profanity.")
+        except Exception as e:
+            logger.warning(f"Could not delete message in group {message.chat.id}. Maybe no admin rights? Error: {e}")
+
+@dp.message(ReminderStates.awaiting_time, F.chat.type == ChatType.PRIVATE)
+async def process_reminder_time(message: types.Message, state: FSMContext):
+    """### REFACTOR: Handles user input only when in the correct state."""
+    try:
+        time_obj = datetime.strptime(message.text.strip(), "%H:%M").time()
+        user_id = message.from_user.id
+        state_data = await state.get_data()
+        event_id = state_data["remind_event_id"]
+        event_date_str = state_data["event_date"] # DD.MM.YYYY
+
+        # Convert to datetime object to reformat
+        event_date_obj = datetime.strptime(event_date_str, "%d.%m.%Y")
+        remind_datetime = event_date_obj.replace(hour=time_obj.hour, minute=time_obj.minute)
+        
+        # Store in a sortable format
+        remind_time_str = remind_datetime.strftime("%Y-%m-%d %H:%M")
+        
+        if await EventManager.update_event_reminder(user_id, event_id, remind_time_str):
+            await message.answer(f"✅ Напоминание для события {event_date_str} установлено на {time_obj.strftime('%H:%M')}.")
+            logger.info(f"User {user_id} set reminder for {event_id} at {remind_time_str}")
+        else:
+            await message.answer("❌ Ошибка при установке напоминания.")
+    except ValueError:
+        await message.answer("Неправильный формат времени. Пожалуйста, используйте Час:Минута (например, 09:30 или 18:00).")
+    except Exception as e:
+        logger.error(f"Error setting reminder for user {message.from_user.id}: {e}")
+        await message.answer("Произошла непредвиденная ошибка.")
+    finally:
+        await state.clear()
+
+@dp.message(F.chat.type == ChatType.PRIVATE)
+async def handle_unknown_private_message(message: types.Message):
+    """Catches any other text messages in private chat."""
+    await message.reply("Неизвестная команда. Используйте /help для списка команд.")
+
 # --- BOT LIFECYCLE ---
 async def on_startup(bot: Bot, aiosession: aiohttp.ClientSession):
-    Database.init_db()
+    await Database.init_db()
     logger.info("База данных инициализирована.")
     
-    # Start background tasks
     asyncio.create_task(remind_checker())
     asyncio.create_task(daily_channel_post(aiosession))
     logger.info("Фоновые задачи (напоминания, ежедневный пост) запущены.")
@@ -493,30 +843,28 @@ async def on_startup(bot: Bot, aiosession: aiohttp.ClientSession):
     await bot.set_my_commands([
         types.BotCommand(command="start", description="Запустить бота"),
         types.BotCommand(command="help", description="Показать помощь"),
-        types.BotCommand(command="calendar", description="Открыть календарь (только в лс)"),
-        types.BotCommand(command="myevents", description="Мои события (только в лс)"),
+        types.BotCommand(command="calendar", description="Добавить событие"),
+        types.BotCommand(command="myevents", description="Мои события"),
         types.BotCommand(command="quote", description="Получить цитату"),
     ])
     logger.info("Бот запущен и готов к работе!")
 
 async def on_shutdown(aiosession: aiohttp.ClientSession):
-    logger.warning("Бот останавливается...")
+    logger.warning("Бот останавлиется...")
     await aiosession.close()
     logger.info("Сессия aiohttp закрыта.")
 
 async def main():
     dp.startup.register(on_startup)
     dp.shutdown.register(on_shutdown)
-    
-    try:
-        await dp.start_polling(bot, aiosession=dp['aiosession'])
-    except Exception as e:
-        logger.critical(f"Критическая ошибка при запуске polling: {e}")
-    finally:
-        logger.info("Бот остановлен.")
+
+    async with aiohttp.ClientSession() as aiosession:
+        await dp.start_polling(bot, aiosession=aiosession)
 
 if __name__ == "__main__":
+    # ### NEW: Add required dependency installation instruction
+    print("Бот запускается... Убедитесь, что у вас установлены все зависимости: pip install aiogram aiosqlite aiohttp python-dotenv loguru aiogram-calendar")
     try:
         asyncio.run(main())
     except (KeyboardInterrupt, SystemExit):
-        logger.info("Бот остановлен вручную.")
+        logger.info("Бот остановлен.")
