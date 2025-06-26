@@ -1,34 +1,41 @@
-# tg_final
-Telegram Bot Calendar
+# 📅 Telegram Calendar Bot (tg_final)
 
-This bot serves as a personal event calendar with reminders, group moderation features,
-and content delivery to a specified channel.
+[![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python)](https://python.org)
+[![Aiogram](https://img.shields.io/badge/Aiogram-3.x-green?logo=telegram)](https://docs.aiogram.dev)
+[![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
 
-Features:
-- Private Chat:
-  - Add events via an interactive calendar (/calendar).
-  - View, manage, and delete events (/myevents).
-  - Set one-time reminders for events.
-  - Clear all personal events (/clearevents).
-- Group Chat:
-  - Automatic deletion of messages containing forbidden words.
-  - Fun commands like /play (dice).
-- Channel Management:
-  - Admins can post messages to a configured channel (/post).
-  - Automatic daily posts with a random quote.
-- General Features:
-  - Fetches random quotes and images from external APIs.
-  - FSM for multi-step dialogues (setting reminders).
-  - Comprehensive logging using Loguru.
-  - Asynchronous database operations with aiosqlite.
-  - Robust error handling and background tasks for reminders and daily posts.
+Ваш персональный ассистент для управления событиями, модерации чатов и публикации контента в Telegram. Бот сочетает функциональность персонального календаря, модератора и контент-менеджера.
 
-Setup:
-1.  Install dependencies:
-    pip install aiogram aiosqlite aiohttp python-dotenv loguru aiogram-calendar
-2.  Create a .env file with the following variables:
-    - TOKEN: Your Telegram bot token.
-    - ADMIN_USER_IDS: Comma-separated list of admin user IDs.
-    - TARGET_CHANNEL_ID: The ID of the channel for daily posts.
-    - STICKER_ID: The file_id for the sticker used in /sticker. (Optional)
-"""
+![Бот в действии](demo.gif) <!-- Замените на реальный скриншот/гифку -->
+
+## 🌟 Ключевые возможности
+
+### 👤 Личный кабинет
+- **Интерактивный календарь** (`/calendar`) для добавления событий
+- **Управление событиями** (`/myevents`) с возможностью редактирования
+- **Напоминания** о предстоящих событиях
+- **Очистка событий** (`/clearevents`)
+
+### 👥 Групповой контроль
+- Автоматическая **модерация сообщений** с запрещенными словами
+- Развлекательные команды (`/play`, `/dice`)
+- Управление спамом и контентом
+
+### 📢 Публикация контента
+- **Планирование публикаций** на канал (`/post`)
+- **Ежедневные автоматические посты** со случайными цитатами
+- Интеграция с внешними API (цитаты, изображения)
+
+### ⚙️ Технические особенности
+- Машина состояний (FSM) для многошаговых сценариев
+- Асинхронная работа с БД через `aiosqlite`
+- Фоновые задачи для напоминаний
+- Логирование с помощью `Loguru`
+- Обработка ошибок и уведомления админам
+
+## 🚀 Установка
+
+1. Клонируйте репозиторий:
+```bash
+git clone https://github.com/ваш-username/tg_final.git
+cd tg_fin
