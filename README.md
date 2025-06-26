@@ -36,6 +36,38 @@
 ## 🚀 Установка
 
 1. Клонируйте репозиторий:
-```bash
 git clone https://github.com/ваш-username/tg_final.git
 cd tg_fin
+
+оздайте файл .env:
+
+TOKEN=ваш_токен_бота
+ADMIN_USER_IDS=id1,id2,id3
+TARGET_CHANNEL_ID=@ваш_канал
+STICKER_ID=CAACAgIAAxkBAAIB... # опционально
+
+🛠 Команды
+Команда	Описание
+/start	Приветственное сообщение
+/calendar	Открыть интерактивный календарь
+/myevents	Показать ваши события
+/clearevents	Удалить все события
+/post	Опубликовать контент в канал
+/play	Играть в кости
+
+tg_final/
+├── data/               # База данных
+├── handlers/           # Обработчики команд
+│   ├── user.py         # Пользовательские команды
+│   ├── admin.py        # Админ-функции
+│   └── group.py        # Модерация групп
+├── services/           # Сервисный слой
+│   ├── calendar.py     # Логика календаря
+│   ├── scheduler.py    # Планировщик задач
+│   └── content.py      # Генерация контента
+├── .env.example        # Шаблон конфига
+├── main.py             # Точка входа
+└── requirements.txt    # Зависимости
+
+[![Code Style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Tests](https://img.shields.io/badge/tests-pytest-blue)](tests/)
