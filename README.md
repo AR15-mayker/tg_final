@@ -12,6 +12,7 @@
 
 ### 👤 Личный кабинет
 - **Интерактивный календарь** (`/calendar`) для добавления событий
+- **Добавление даты + времени + названия** события через пошаговый сценарий
 - **Управление событиями** (`/myevents`) с возможностью редактирования
 - **Напоминания** о предстоящих событиях
 - **Очистка событий** (`/clearevents`)
@@ -56,18 +57,11 @@ STICKER_ID=CAACAgIAAxkBAAIB... # опционально
 /play	Играть в кости
 
 tg_final/
-├── data/               # База данных
-├── handlers/           # Обработчики команд
-│   ├── user.py         # Пользовательские команды
-│   ├── admin.py        # Админ-функции
-│   └── group.py        # Модерация групп
-├── services/           # Сервисный слой
-│   ├── calendar.py     # Логика календаря
-│   ├── scheduler.py    # Планировщик задач
-│   └── content.py      # Генерация контента
-├── .env.example        # Шаблон конфига
-├── main.py             # Точка входа
-└── requirements.txt    # Зависимости
+├── bot/
+│   ├── db.py           # БД, миграции и менеджер событий
+│   └── states.py       # FSM-состояния
+├── main.py             # Точка входа и обработчики
+└── README.md
 
 [![Code Style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Tests](https://img.shields.io/badge/tests-pytest-blue)](tests/)
