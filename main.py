@@ -4,6 +4,9 @@ import aiohttp
 import aiosqlite
 import html
 import uuid
+import re
+
+AR15-mayker/i-like-english
 from typing import Tuple
 from aiogram import Bot, Dispatcher, types, F
 from aiogram.filters import CommandStart, Command, BaseFilter
@@ -68,6 +71,7 @@ REMIND_PREFIX = "rem_"
 ITEMS_PER_PAGE = 5
 REMINDER_CHECK_INTERVAL = 60
 DAILY_POST_TIME_STR = "09:00"
+BOT_USERNAME: str | None = None
 
 
 def format_event_datetime(event_datetime: str) -> str:
@@ -75,6 +79,26 @@ def format_event_datetime(event_datetime: str) -> str:
         return datetime.strptime(event_datetime, "%Y-%m-%d %H:%M").strftime("%d.%m.%Y %H:%M")
     except ValueError:
         return event_datetime
+
+
+def contains_forbidden_word(text: str) -> bool:
+    lowered = text.lower()
+    normalized_words = re.findall(r"[а-яА-ЯёЁa-zA-Z0-9_]+", lowered)
+    for bad_word in FORBIDDEN_WORDS:
+        if " " in bad_word:
+            if bad_word in lowered:
+                return True
+        elif bad_word in normalized_words:
+            return True
+    return False
+
+
+async def build_private_link() -> str:
+    global BOT_USERNAME
+    if not BOT_USERNAME:
+        me = await bot.get_me()
+        BOT_USERNAME = me.username
+    return f"https://t.me/{BOT_USERNAME}"
 
 # --- CUSTOM FILTERS ---
 class IsAdmin(BaseFilter):
@@ -275,6 +299,7 @@ async def help_cmd(message: types.Message):
             "/help - Показать это сообщение\n"
             "/play - Сыграть в кости\n"
             "/quote, /image, /sticker - Развлекательные команды\n\n"
+            "Личный календарь (/calendar, /myevents, /clearevents) доступен в личных сообщениях с ботом.\n"
             "Я также удаляю сообщения с некоторыми плохими словами (если есть права администратора).",
             parse_mode="HTML"
         )
@@ -283,9 +308,25 @@ async def help_cmd(message: types.Message):
 async def calendar_cmd(message: types.Message):
     await message.answer("Выберите дату для добавления:", reply_markup=await SimpleCalendar().start_calendar())
 
+
+@dp.message(F.chat.type.in_({ChatType.GROUP, ChatType.SUPERGROUP}), Command("calendar"))
+async def calendar_in_group_cmd(message: types.Message):
+    private_link = await build_private_link()
+    await message.reply(
+        "📅 Для добавления личного события перейдите в личный чат с ботом:\n"
+        f"{private_link}\n\n"
+        "В группе календарь не ведется, чтобы не смешивать личные события участников."
+    )
+
 @dp.message(F.chat.type == ChatType.PRIVATE, Command("myevents"))
 async def show_events(message: types.Message):
     await MessageManager.display_events_page(message, message.from_user.id, 0)
+
+
+@dp.message(F.chat.type.in_({ChatType.GROUP, ChatType.SUPERGROUP}), Command("myevents"))
+async def show_events_in_group(message: types.Message):
+    private_link = await build_private_link()
+    await message.reply(f"Ваши события можно посмотреть в личке с ботом: {private_link}")
 
 @dp.message(F.chat.type == ChatType.PRIVATE, Command("clearevents"))
 async def clear_events_cmd(message: types.Message):
@@ -296,6 +337,12 @@ async def clear_events_cmd(message: types.Message):
         )
     else:
         await message.answer("У вас нет событий для удаления.")
+
+
+@dp.message(F.chat.type.in_({ChatType.GROUP, ChatType.SUPERGROUP}), Command("clearevents"))
+async def clear_events_in_group_cmd(message: types.Message):
+    private_link = await build_private_link()
+    await message.reply(f"Удаление личных событий доступно только в личке: {private_link}")
 
 @dp.message(Command("quote"))
 async def quote_cmd(message: types.Message, aiosession: aiohttp.ClientSession):
@@ -507,7 +554,9 @@ async def back_to_events_handler(cb: types.CallbackQuery):
 @dp.message(F.chat.type.in_({ChatType.GROUP, ChatType.SUPERGROUP}), F.text)
 async def filter_group_messages(message: types.Message):
     """### FIX: Handler only contains group-related logic now."""
-    if any(word in message.text.lower() for word in FORBIDDEN_WORDS):
+    if not message.text:
+        return
+    if contains_forbidden_word(message.text):
         try:
             await message.delete()
             logger.info(f"Deleted message from {message.from_user.id} in group {message.chat.id} for profanity.")
@@ -557,6 +606,9 @@ async def on_startup(bot: Bot, aiosession: aiohttp.ClientSession):
     asyncio.create_task(remind_checker())
     asyncio.create_task(daily_channel_post(aiosession))
     logger.info("Фоновые задачи (напоминания, ежедневный пост) запущены.")
+    me = await bot.get_me()
+    global BOT_USERNAME
+    BOT_USERNAME = me.username
     
     await bot.set_my_commands([
         types.BotCommand(command="start", description="Запустить бота"),
