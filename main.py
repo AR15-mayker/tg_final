@@ -18,6 +18,8 @@ from datetime import datetime
 from dotenv import load_dotenv
 from loguru import logger
 from aiogram.exceptions import TelegramBadRequest
+from bot.db import Database, EventManager
+from bot.states import ReminderStates
 
 # --- INITIAL SETUP ---
 logger.add(
