@@ -5,12 +5,9 @@ import aiosqlite
 import html
 import uuid
 import re
-<<<<<<< HEAD
 
 from aiogram.filters import CommandStart, Command, BaseFilter
 from aiogram.fsm.state import State, StatesGroup
-=======
->>>>>>> eb196fb90f9a869c84165c2485af7955f493f44a
 from typing import Tuple
 from aiogram import Bot, Dispatcher, types, F
 from aiogram.filters import CommandStart, Command
@@ -697,11 +694,8 @@ async def on_startup(bot: Bot, aiosession: aiohttp.ClientSession):
 
     asyncio.create_task(remind_checker())
     logger.info("Фоновая задача напоминаний запущена.")
-<<<<<<< HEAD
     asyncio.create_task(remind_checker())
     logger.info("Фоновые задачи (напоминания, ежедневный пост) запущены.")
-=======
->>>>>>> eb196fb90f9a869c84165c2485af7955f493f44a
     me = await bot.get_me()
     global BOT_USERNAME
     BOT_USERNAME = me.username

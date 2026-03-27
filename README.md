@@ -30,28 +30,5 @@
 - Логирование с помощью `Loguru`
 - Обработка ошибок и уведомления админам
 
-## 🚀 Установка
-
-1. Клонируйте репозиторий:
-git clone https://github.com/ваш-username/tg_final.git
-cd tg_fin
-
-оздайте файл .env:
-
-TOKEN=ваш_токен_бота
-STICKER_ID=CAACAgIAAxkBAAIB... # опционально
-
-🛠 Команды
-Команда	Описание
-/start	Приветственное сообщение
-/calendar	Открыть интерактивный календарь
-/myevents	Показать ваши события
-/clearevents	Удалить все события
-/play	Играть в кости
-
-tg_final/
-├── main.py             # Основной файл (включая БД, FSM и обработчики)
-└── README.md
-
 [![Code Style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Tests](https://img.shields.io/badge/tests-pytest-blue)](tests/)
