@@ -5,6 +5,8 @@ import aiosqlite
 import html
 import uuid
 import re
+
+AR15-mayker/i-like-english
 from typing import Tuple
 from aiogram import Bot, Dispatcher, types, F
 from aiogram.filters import CommandStart, Command
@@ -18,6 +20,8 @@ from datetime import datetime
 from dotenv import load_dotenv
 from loguru import logger
 from aiogram.exceptions import TelegramBadRequest
+from bot.db import Database, EventManager
+from bot.states import ReminderStates
 
 # --- INITIAL SETUP ---
 logger.add(
