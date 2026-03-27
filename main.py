@@ -5,6 +5,8 @@ import aiosqlite
 import html
 import uuid
 import re
+
+AR15-mayker/i-like-english
 from typing import Tuple
 from aiogram import Bot, Dispatcher, types, F
 from aiogram.filters import CommandStart, Command
@@ -62,6 +64,7 @@ PAGE_PREFIX = "page_"
 REMIND_PREFIX = "rem_"
 ITEMS_PER_PAGE = 5
 REMINDER_CHECK_INTERVAL = 60
+DAILY_POST_TIME_STR = "09:00"
 BOT_USERNAME: str | None = None
 
 
@@ -90,6 +93,31 @@ async def build_private_link() -> str:
         me = await bot.get_me()
         BOT_USERNAME = me.username
     return f"https://t.me/{BOT_USERNAME}"
+
+
+def contains_forbidden_word(text: str) -> bool:
+    lowered = text.lower()
+    normalized_words = re.findall(r"[а-яА-ЯёЁa-zA-Z0-9_]+", lowered)
+    for bad_word in FORBIDDEN_WORDS:
+        if " " in bad_word:
+            if bad_word in lowered:
+                return True
+        elif bad_word in normalized_words:
+            return True
+    return False
+
+
+async def build_private_link() -> str:
+    global BOT_USERNAME
+    if not BOT_USERNAME:
+        me = await bot.get_me()
+        BOT_USERNAME = me.username
+    return f"https://t.me/{BOT_USERNAME}"
+
+# --- CUSTOM FILTERS ---
+class IsAdmin(BaseFilter):
+    async def __call__(self, message: Message) -> bool:
+        return message.from_user.id in ADMIN_USER_IDS
 
 class ExternalContentManager:
     """Класс для получения контента с внешних API"""
@@ -540,6 +568,8 @@ async def on_startup(bot: Bot, aiosession: aiohttp.ClientSession):
     
     asyncio.create_task(remind_checker())
     logger.info("Фоновая задача напоминаний запущена.")
+    asyncio.create_task(daily_channel_post(aiosession))
+    logger.info("Фоновые задачи (напоминания, ежедневный пост) запущены.")
     me = await bot.get_me()
     global BOT_USERNAME
     BOT_USERNAME = me.username
