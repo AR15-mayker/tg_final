@@ -1,0 +1,65 @@
+2026-03-27 10:28:13 | INFO | База данных инициализирована.
+2026-03-27 10:28:13 | INFO | Фоновая задача напоминаний запущена.
+2026-03-27 10:32:15 | INFO | База данных инициализирована.
+2026-03-27 10:32:15 | INFO | Фоновая задача напоминаний запущена.
+2026-03-27 10:32:15 | INFO | Фоновые задачи (напоминания, ежедневный пост) запущены.
+2026-03-27 10:32:19 | INFO | Бот запущен и готов к работе!
+2026-03-27 10:34:08 | ERROR | Attempt 1/3 failed to fetch quote: 
+2026-03-27 10:34:08 | ERROR | Attempt 1/3 failed to fetch quote: Cannot connect to host api.quotable.io:443 ssl:default [getaddrinfo failed]
+2026-03-27 10:34:08 | ERROR | Attempt 1/3 failed to fetch quote: Cannot connect to host api.quotable.io:443 ssl:default [getaddrinfo failed]
+2026-03-27 10:34:10 | ERROR | Attempt 2/3 failed to fetch quote: Cannot connect to host api.quotable.io:443 ssl:default [getaddrinfo failed]
+2026-03-27 10:34:21 | ERROR | Attempt 2/3 failed to fetch quote: 
+2026-03-27 10:34:21 | ERROR | Attempt 2/3 failed to fetch quote: 
+2026-03-27 10:34:22 | ERROR | Attempt 3/3 failed to fetch quote: Cannot connect to host api.quotable.io:443 ssl:default [getaddrinfo failed]
+2026-03-27 10:34:22 | ERROR | All retries failed for fetching quote.
+2026-03-27 10:34:32 | ERROR | Invalid STICKER_ID: .... Failed to send sticker.
+2026-03-27 10:34:36 | ERROR | Attempt 3/3 failed to fetch quote: 
+2026-03-27 10:34:36 | ERROR | All retries failed for fetching quote.
+2026-03-27 10:34:36 | ERROR | Attempt 3/3 failed to fetch quote: 
+2026-03-27 10:34:36 | ERROR | All retries failed for fetching quote.
+2026-03-27 10:34:36 | ERROR | Attempt 1/3 failed to fetch quote: Cannot connect to host api.quotable.io:443 ssl:default [getaddrinfo failed]
+2026-03-27 10:34:49 | ERROR | Attempt 2/3 failed to fetch quote: 
+2026-03-27 10:34:53 | ERROR | Attempt 3/3 failed to fetch quote: Cannot connect to host api.quotable.io:443 ssl:default [getaddrinfo failed]
+2026-03-27 10:34:53 | ERROR | All retries failed for fetching quote.
+2026-03-27 10:35:57 | INFO | User 1337142737 selected date 27.03.2026, waiting for event time.
+2026-03-27 10:36:16 | ERROR | Error editing message: Telegram server says - Bad Request: message can't be edited, attempting to send new one.
+2026-03-27 10:36:18 | SUCCESS | User 1337142737 added event for 2026-03-27 10:50: Привет (ID: 4cf84223-49eb-4e5e-9bee-7ecfa6c74a99)
+2026-03-27 10:37:01 | INFO | User 2097799738 selected date 27.03.2026, waiting for event time.
+2026-03-27 10:37:18 | SUCCESS | User 2097799738 added event for 2026-03-27 11:00: Бебебе (ID: 16e58441-5093-4664-bebc-bb3719984161)
+2026-03-27 10:38:06 | ERROR | Error editing message: Telegram server says - Bad Request: message can't be edited, attempting to send new one.
+2026-03-27 10:38:11 | SUCCESS | User 2097799738 cleared all events (1 removed)
+2026-03-27 11:06:10 | WARNING | Бот останавлиется...
+2026-03-27 11:06:10 | INFO | Сессия aiohttp закрыта.
+2026-03-27 11:06:11 | INFO | Бот остановлен.
+2026-03-27 11:06:15 | INFO | База данных инициализирована.
+2026-03-27 11:06:15 | INFO | Фоновая задача напоминаний запущена.
+2026-03-27 11:06:15 | INFO | Фоновые задачи (напоминания, ежедневный пост) запущены.
+2026-03-27 11:07:10 | INFO | База данных инициализирована.
+2026-03-27 11:07:10 | INFO | Фоновая задача напоминаний запущена.
+2026-03-27 11:07:10 | INFO | Фоновые задачи (напоминания, ежедневный пост) запущены.
+2026-03-27 11:07:11 | INFO | Бот запущен и готов к работе!
+2026-03-27 11:07:21 | ERROR | Error editing message: Telegram server says - Bad Request: message can't be edited, attempting to send new one.
+2026-03-27 11:07:27 | SUCCESS | User 1337142737 deleted event 4cf84223-49eb-4e5e-9bee-7ecfa6c74a99 (2026-03-27 10:50)
+2026-03-27 11:07:38 | INFO | User 2097799738 selected date 27.03.2026, waiting for event time.
+2026-03-27 11:07:47 | SUCCESS | User 2097799738 added event for 2026-03-27 11:08: Бябябя (ID: d9e5d414-cbbc-4cbc-89ad-7c4b221dfa2b)
+2026-03-27 11:07:53 | INFO | User 2097799738 selected date 27.03.2026, waiting for event time.
+2026-03-27 11:08:00 | SUCCESS | User 2097799738 added event for 2026-03-27 11:09: Бебебе (ID: cdf6ff77-cabc-4733-9e28-5a3a7dc262c2)
+2026-03-27 11:08:04 | ERROR | Error editing message: Telegram server says - Bad Request: message can't be edited, attempting to send new one.
+2026-03-27 11:08:15 | INFO | User 2097799738 selected date 27.03.2026, waiting for event time.
+2026-03-27 11:08:25 | SUCCESS | User 2097799738 added event for 2026-03-27 11:10: Бубубу (ID: dd256bd0-94cd-4867-8cf8-9b7b6986c73a)
+2026-03-27 11:08:32 | INFO | User 2097799738 selected date 27.03.2026, waiting for event time.
+2026-03-27 11:08:57 | SUCCESS | User 2097799738 added event for 2026-03-27 11:11: Бибиби (ID: e26c79e1-d6e1-4067-bc51-0ad1cbfad061)
+2026-03-27 11:09:00 | ERROR | Error editing message: Telegram server says - Bad Request: message can't be edited, attempting to send new one.
+2026-03-27 11:12:49 | WARNING | Бот останавлиется...
+2026-03-27 11:12:49 | INFO | Сессия aiohttp закрыта.
+2026-03-27 11:12:49 | INFO | Бот остановлен.
+2026-03-27 11:16:08 | INFO | База данных инициализирована.
+2026-03-27 11:16:08 | INFO | Фоновая задача напоминаний запущена.
+2026-03-27 11:16:08 | INFO | Фоновые задачи (напоминания, ежедневный пост) запущены.
+2026-03-27 11:16:09 | INFO | Бот запущен и готов к работе!
+2026-03-27 11:16:11 | ERROR | Error editing message: Telegram server says - Bad Request: message can't be edited, attempting to send new one.
+2026-03-27 11:16:57 | INFO | User 1337142737 selected date 27.03.2026, waiting for event time.
+2026-03-27 11:17:14 | SUCCESS | User 1337142737 added event for 2026-03-27 11:30: Привет (ID: 7adb540c-0b7f-426a-80c0-6f9d9ab31488)
+2026-03-27 11:57:34 | WARNING | Бот останавлиется...
+2026-03-27 11:57:34 | INFO | Сессия aiohttp закрыта.
+2026-03-27 11:57:34 | INFO | Бот остановлен.

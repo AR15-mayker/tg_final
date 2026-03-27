@@ -6,7 +6,8 @@ import html
 import uuid
 import re
 
-AR15-mayker/i-like-english
+from aiogram.filters import CommandStart, Command, BaseFilter
+from aiogram.fsm.state import State, StatesGroup
 from typing import Tuple
 from aiogram import Bot, Dispatcher, types, F
 from aiogram.filters import CommandStart, Command
@@ -20,7 +21,10 @@ from dotenv import load_dotenv
 from loguru import logger
 from aiogram.exceptions import TelegramBadRequest
 from bot.db import Database, EventManager
-from bot.states import ReminderStates
+class ReminderStates(StatesGroup):
+    awaiting_time = State()
+    awaiting_event_time = State()
+    awaiting_event_text = State()
 
 # --- INITIAL SETUP ---
 logger.add(
@@ -565,10 +569,10 @@ async def handle_unknown_private_message(message: types.Message):
 async def on_startup(bot: Bot, aiosession: aiohttp.ClientSession):
     await Database.init_db()
     logger.info("База данных инициализирована.")
-    
+
     asyncio.create_task(remind_checker())
     logger.info("Фоновая задача напоминаний запущена.")
-    asyncio.create_task(daily_channel_post(aiosession))
+    asyncio.create_task(remind_checker())
     logger.info("Фоновые задачи (напоминания, ежедневный пост) запущены.")
     me = await bot.get_me()
     global BOT_USERNAME
