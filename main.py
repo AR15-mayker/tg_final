@@ -5,8 +5,6 @@ import aiosqlite
 import html
 import uuid
 import re
-
-AR15-mayker/i-like-english
 from typing import Tuple
 from aiogram import Bot, Dispatcher, types, F
 from aiogram.filters import CommandStart, Command
@@ -14,6 +12,7 @@ from aiogram.enums import ChatType
 from aiogram.types import ReplyKeyboardRemove, InlineKeyboardMarkup, InlineKeyboardButton, Message
 from aiogram.fsm.context import FSMContext
 from aiogram.fsm.storage.memory import MemoryStorage
+from aiogram.fsm.state import State, StatesGroup
 from aiogram_calendar import SimpleCalendar, SimpleCalendarCallback
 from datetime import datetime
 from dotenv import load_dotenv
@@ -46,6 +45,12 @@ storage = MemoryStorage()
 bot = Bot(TOKEN)
 dp = Dispatcher(storage=storage)
 
+
+class ReminderStates(StatesGroup):
+    awaiting_time = State()
+    awaiting_event_time = State()
+    awaiting_event_text = State()
+
 # --- GLOBAL CONSTANTS ---
 FORBIDDEN_WORDS = {"дурак", "идиот", "хам",
                    "блять", "пизда", "хуй",
@@ -64,8 +69,8 @@ PAGE_PREFIX = "page_"
 REMIND_PREFIX = "rem_"
 ITEMS_PER_PAGE = 5
 REMINDER_CHECK_INTERVAL = 60
-DAILY_POST_TIME_STR = "09:00"
 BOT_USERNAME: str | None = None
+DB_NAME = "events.db"
 
 
 def format_event_datetime(event_datetime: str) -> str:
@@ -95,29 +100,144 @@ async def build_private_link() -> str:
     return f"https://t.me/{BOT_USERNAME}"
 
 
-def contains_forbidden_word(text: str) -> bool:
-    lowered = text.lower()
-    normalized_words = re.findall(r"[а-яА-ЯёЁa-zA-Z0-9_]+", lowered)
-    for bad_word in FORBIDDEN_WORDS:
-        if " " in bad_word:
-            if bad_word in lowered:
-                return True
-        elif bad_word in normalized_words:
-            return True
-    return False
+class Database:
+    @staticmethod
+    async def init_db():
+        async with aiosqlite.connect(DB_NAME) as db:
+            await db.execute(
+                """
+                CREATE TABLE IF NOT EXISTS events (
+                    user_id INTEGER,
+                    event_id TEXT,
+                    event_datetime TEXT,
+                    text TEXT,
+                    remind_time TEXT,
+                    PRIMARY KEY (user_id, event_id),
+                    UNIQUE(user_id, event_datetime)
+                )
+                """
+            )
+            await db.commit()
+
+            async with db.execute("PRAGMA table_info(events)") as cursor:
+                columns = [row[1] for row in await cursor.fetchall()]
+
+            if "date" in columns:
+                logger.warning("Обнаружена старая схема таблицы events. Выполняется миграция.")
+                await db.execute(
+                    """
+                    CREATE TABLE IF NOT EXISTS events_new (
+                        user_id INTEGER,
+                        event_id TEXT,
+                        event_datetime TEXT,
+                        text TEXT,
+                        remind_time TEXT,
+                        PRIMARY KEY (user_id, event_id),
+                        UNIQUE(user_id, event_datetime)
+                    )
+                    """
+                )
+                await db.execute(
+                    """
+                    INSERT OR IGNORE INTO events_new (user_id, event_id, event_datetime, text, remind_time)
+                    SELECT user_id,
+                           event_id,
+                           substr(date, 7, 4) || '-' || substr(date, 4, 2) || '-' || substr(date, 1, 2) || ' 00:00',
+                           text,
+                           remind_time
+                    FROM events
+                    """
+                )
+                await db.execute("DROP TABLE events")
+                await db.execute("ALTER TABLE events_new RENAME TO events")
+                await db.commit()
+                logger.info("Миграция таблицы events завершена.")
+
+    @staticmethod
+    async def execute_query(query: str, params: tuple = (), fetch: bool = False):
+        async with aiosqlite.connect(DB_NAME) as db:
+            db.row_factory = aiosqlite.Row
+            async with db.execute(query, params) as cursor:
+                if fetch:
+                    return await cursor.fetchall()
+                await db.commit()
+                return cursor.rowcount
 
 
-async def build_private_link() -> str:
-    global BOT_USERNAME
-    if not BOT_USERNAME:
-        me = await bot.get_me()
-        BOT_USERNAME = me.username
-    return f"https://t.me/{BOT_USERNAME}"
+class EventManager:
+    @staticmethod
+    async def get_user_events(user_id: int):
+        return await Database.execute_query(
+            "SELECT * FROM events WHERE user_id = ? ORDER BY event_datetime",
+            (user_id,),
+            fetch=True,
+        )
 
-# --- CUSTOM FILTERS ---
-class IsAdmin(BaseFilter):
-    async def __call__(self, message: Message) -> bool:
-        return message.from_user.id in ADMIN_USER_IDS
+    @staticmethod
+    async def get_single_event(user_id: int, event_id: str):
+        rows = await Database.execute_query(
+            "SELECT * FROM events WHERE user_id = ? AND event_id = ?",
+            (user_id, event_id),
+            fetch=True,
+        )
+        return rows[0] if rows else None
+
+    @staticmethod
+    async def add_event(user_id: int, event_id: str, event_datetime: str, text: str = "Мое событие"):
+        await Database.execute_query(
+            "INSERT INTO events (user_id, event_id, event_datetime, text, remind_time) VALUES (?, ?, ?, ?, NULL)",
+            (user_id, event_id, event_datetime, text),
+        )
+
+    @staticmethod
+    async def update_event_reminder(user_id: int, event_id: str, remind_time: str) -> bool:
+        return (
+            await Database.execute_query(
+                "UPDATE events SET remind_time = ? WHERE user_id = ? AND event_id = ?",
+                (remind_time, user_id, event_id),
+            )
+            > 0
+        )
+
+    @staticmethod
+    async def clear_event_reminder(user_id: int, event_id: str) -> bool:
+        return (
+            await Database.execute_query(
+                "UPDATE events SET remind_time = NULL WHERE user_id = ? AND event_id = ?",
+                (user_id, event_id),
+            )
+            > 0
+        )
+
+    @staticmethod
+    async def delete_event(user_id: int, event_id: str) -> bool:
+        return (
+            await Database.execute_query("DELETE FROM events WHERE user_id = ? AND event_id = ?", (user_id, event_id))
+            > 0
+        )
+
+    @staticmethod
+    async def clear_user_events(user_id: int) -> int:
+        return await Database.execute_query("DELETE FROM events WHERE user_id = ?", (user_id,))
+
+    @staticmethod
+    async def event_exists(user_id: int, event_datetime: str) -> bool:
+        return bool(
+            await Database.execute_query(
+                "SELECT 1 FROM events WHERE user_id = ? AND event_datetime = ? LIMIT 1",
+                (user_id, event_datetime),
+                fetch=True,
+            )
+        )
+
+    @staticmethod
+    async def get_events_for_reminder():
+        now_str = datetime.now().strftime("%Y-%m-%d %H:%M")
+        return await Database.execute_query(
+            "SELECT * FROM events WHERE remind_time IS NOT NULL AND remind_time <= ?",
+            (now_str,),
+            fetch=True,
+        )
 
 class ExternalContentManager:
     """Класс для получения контента с внешних API"""
@@ -132,14 +252,14 @@ class ExternalContentManager:
                     data = await response.json()
                     return f"\"{data['content']}\" - {data['author']}"
             except (aiohttp.ClientError, asyncio.TimeoutError) as e:
-                logger.error(f"Attempt {i + 1}/{retries} failed to fetch quote: {e}")
+                logger.error(f"Попытка {i + 1}/{retries}: не удалось получить цитату: {e}")
                 if i < retries - 1:
                     await asyncio.sleep(delay * (i + 1))
                 else:
-                    logger.error("All retries failed for fetching quote.")
+                    logger.error("Все попытки получения цитаты завершились ошибкой.")
                     return "Не удалось получить цитату дня из-за сетевой ошибки."
             except Exception as e:
-                logger.error(f"Unexpected error fetching quote: {e}")
+                logger.error(f"Непредвиденная ошибка при получении цитаты: {e}")
                 return "Ошибка при загрузке цитаты."
         return "Не удалось получить цитату после нескольких попыток."
 
@@ -214,7 +334,7 @@ class MessageManager:
             await target_message.edit_text(display_text, reply_markup=keyboard)
         except TelegramBadRequest as e:
             if "message is not modified" not in e.message:
-                logger.error(f"Error editing message: {e}, attempting to send new one.")
+                logger.error(f"Ошибка редактирования сообщения: {e}. Пробую отправить новое.")
                 await target_message.answer(display_text, reply_markup=keyboard)
         except Exception: # If edit fails for any other reason (e.g. old message)
             await target_message.answer(display_text, reply_markup=keyboard)
@@ -239,7 +359,7 @@ async def remind_checker():
                     )
                     # Clear reminder so it's not sent again
                     await EventManager.clear_event_reminder(event['user_id'], event['event_id'])
-                    logger.info(f"Sent reminder for event {event['event_id']} to user {event['user_id']}")
+                    logger.info(f"Отправлено напоминание по событию {event['event_id']} пользователю {event['user_id']}")
                 except Exception as e:
                     logger.error(f"Ошибка при отправке напоминания пользователю {event['user_id']}: {e}")
         except Exception as e:
@@ -342,7 +462,7 @@ async def sticker_cmd(message: types.Message):
     try:
         await message.answer_sticker(STICKER_ID)
     except TelegramBadRequest:
-        logger.error(f"Invalid STICKER_ID: {STICKER_ID}. Failed to send sticker.")
+        logger.error(f"Неверный STICKER_ID: {STICKER_ID}. Не удалось отправить стикер.")
         await message.answer(
             '''Не удалось отправить стикер. Возможно, указан неверный `STICKER_ID`.
 
@@ -368,13 +488,13 @@ async def process_simple_calendar(cb: types.CallbackQuery, callback_data: Simple
     try:
         await state.set_state(ReminderStates.awaiting_event_time)
         await state.update_data(pending_event_date=date_str)
-        logger.info(f"User {user_id} selected date {date_str}, waiting for event time.")
+        logger.info(f"Пользователь {user_id} выбрал дату {date_str}, ожидаю ввод времени.")
         await cb.message.edit_text(
             f"📅 Дата выбрана: {date_str}\n\nТеперь отправьте время события в формате ЧЧ:ММ (например: 14:30).",
             reply_markup=KeyboardManager.get_back_keyboard()
         )
     except Exception as e:
-        logger.error(f"Error processing date selection for user {user_id}: {e}")
+        logger.error(f"Ошибка обработки выбранной даты для пользователя {user_id}: {e}")
         await cb.answer("Произошла ошибка при выборе даты.", show_alert=True)
 
 
@@ -421,16 +541,16 @@ async def process_event_text(message: types.Message, state: FSMContext):
 
         event_id = str(uuid.uuid4())
         await EventManager.add_event(user_id, event_id, event_datetime, event_text)
-        logger.success(f"User {user_id} added event for {event_datetime}: {event_text} (ID: {event_id})")
+        logger.success(f"Пользователь {user_id} добавил событие на {event_datetime}: {event_text} (ID: {event_id})")
         await message.answer(
             f"✅ Событие сохранено!\n\n📅 Дата и время: {date_str} {time_str}\n📝 Текст: {html.escape(event_text)}",
             parse_mode="HTML"
         )
     except aiosqlite.IntegrityError:
-        logger.warning(f"User {user_id} tried to add duplicate datetime {date_str} {time_str}")
+        logger.warning(f"Пользователь {user_id} попытался добавить дубликат даты/времени {date_str} {time_str}")
         await message.answer(f"⚠️ У вас уже есть событие на {date_str} {time_str}!")
     except Exception as e:
-        logger.error(f"Error adding event text for user {user_id}: {e}")
+        logger.error(f"Ошибка при добавлении текста события для пользователя {user_id}: {e}")
         await message.answer("Произошла ошибка при добавлении события.")
     finally:
         await state.clear()
@@ -458,7 +578,7 @@ async def handle_confirmation(cb: types.CallbackQuery):
 
     if prefix == "cfm":
         if await EventManager.delete_event(user_id, event_id):
-            logger.success(f"User {user_id} deleted event {event_id} ({event['event_datetime']})")
+            logger.success(f"Пользователь {user_id} удалил событие {event_id} ({event['event_datetime']})")
             await cb.message.edit_text(
                 f"🗑️ Событие на {format_event_datetime(event['event_datetime'])} удалено!",
                 reply_markup=KeyboardManager.get_back_keyboard()
@@ -486,7 +606,7 @@ async def confirm_clear_all_handler(cb: types.CallbackQuery):
     count = await EventManager.clear_user_events(cb.from_user.id)
     text = f"🗑️ Удалено {count} событий!" if count > 0 else "У вас не было событий для удаления."
     await cb.message.edit_text(text, reply_markup=None)
-    logger.success(f"User {cb.from_user.id} cleared all events ({count} removed)")
+    logger.success(f"Пользователь {cb.from_user.id} очистил все события (удалено: {count})")
 
 @dp.callback_query(F.data == "cancel_clear_all")
 async def cancel_clear_all_handler(cb: types.CallbackQuery):
@@ -522,9 +642,9 @@ async def filter_group_messages(message: types.Message):
     if contains_forbidden_word(message.text):
         try:
             await message.delete()
-            logger.info(f"Deleted message from {message.from_user.id} in group {message.chat.id} for profanity.")
+            logger.info(f"Удалено сообщение пользователя {message.from_user.id} в группе {message.chat.id} из-за мата.")
         except Exception as e:
-            logger.warning(f"Could not delete message in group {message.chat.id}. Maybe no admin rights? Error: {e}")
+            logger.warning(f"Не удалось удалить сообщение в группе {message.chat.id}. Возможно, нет прав администратора. Ошибка: {e}")
 
 @dp.message(ReminderStates.awaiting_time, F.chat.type == ChatType.PRIVATE)
 async def process_reminder_time(message: types.Message, state: FSMContext):
@@ -545,13 +665,13 @@ async def process_reminder_time(message: types.Message, state: FSMContext):
         
         if await EventManager.update_event_reminder(user_id, event_id, remind_time_str):
             await message.answer(f"✅ Напоминание для события {event_date_str} установлено на {time_obj.strftime('%H:%M')}.")
-            logger.info(f"User {user_id} set reminder for {event_id} at {remind_time_str}")
+            logger.info(f"Пользователь {user_id} установил напоминание для {event_id} на {remind_time_str}")
         else:
             await message.answer("❌ Ошибка при установке напоминания.")
     except ValueError:
         await message.answer("Неправильный формат времени. Пожалуйста, используйте Час:Минута (например, 09:30 или 18:00).")
     except Exception as e:
-        logger.error(f"Error setting reminder for user {message.from_user.id}: {e}")
+        logger.error(f"Ошибка установки напоминания для пользователя {message.from_user.id}: {e}")
         await message.answer("Произошла непредвиденная ошибка.")
     finally:
         await state.clear()
@@ -568,8 +688,6 @@ async def on_startup(bot: Bot, aiosession: aiohttp.ClientSession):
     
     asyncio.create_task(remind_checker())
     logger.info("Фоновая задача напоминаний запущена.")
-    asyncio.create_task(daily_channel_post(aiosession))
-    logger.info("Фоновые задачи (напоминания, ежедневный пост) запущены.")
     me = await bot.get_me()
     global BOT_USERNAME
     BOT_USERNAME = me.username
