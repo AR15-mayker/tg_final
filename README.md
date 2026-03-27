@@ -44,8 +44,6 @@ cd tg_fin
 оздайте файл .env:
 
 TOKEN=ваш_токен_бота
-ADMIN_USER_IDS=id1,id2,id3
-TARGET_CHANNEL_ID=@ваш_канал
 STICKER_ID=CAACAgIAAxkBAAIB... # опционально
 
 🛠 Команды
@@ -54,7 +52,6 @@ STICKER_ID=CAACAgIAAxkBAAIB... # опционально
 /calendar	Открыть интерактивный календарь
 /myevents	Показать ваши события
 /clearevents	Удалить все события
-/post	Опубликовать контент в канал
 /play	Играть в кости
 
 tg_final/

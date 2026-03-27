@@ -9,13 +9,13 @@ import re
 AR15-mayker/i-like-english
 from typing import Tuple
 from aiogram import Bot, Dispatcher, types, F
-from aiogram.filters import CommandStart, Command, BaseFilter
+from aiogram.filters import CommandStart, Command
 from aiogram.enums import ChatType
 from aiogram.types import ReplyKeyboardRemove, InlineKeyboardMarkup, InlineKeyboardButton, Message
 from aiogram.fsm.context import FSMContext
 from aiogram.fsm.storage.memory import MemoryStorage
 from aiogram_calendar import SimpleCalendar, SimpleCalendarCallback
-from datetime import datetime, timedelta
+from datetime import datetime
 from dotenv import load_dotenv
 from loguru import logger
 from aiogram.exceptions import TelegramBadRequest
@@ -33,16 +33,10 @@ logger.add(
 
 load_dotenv()
 TOKEN = os.getenv("TOKEN")
-ADMIN_USER_IDS = [int(admin_id) for admin_id in os.getenv("ADMIN_USER_IDS", "").split(',') if admin_id]
-TARGET_CHANNEL_ID = os.getenv("TARGET_CHANNEL_ID")
 STICKER_ID = os.getenv("STICKER_ID")
 
 if not TOKEN:
     raise ValueError("Не найден токен бота в переменных окружения!")
-if not ADMIN_USER_IDS:
-    logger.warning("Не найдены ID администраторов в переменных окружения! Некоторые команды будут недоступны.")
-if not TARGET_CHANNEL_ID:
-    logger.warning("Не найден ID целевого канала! Публикация в канал будет невозможна.")
 if not STICKER_ID:
     logger.warning("Не найден STICKER_ID в переменных окружения! Команда /sticker будет недоступна.")
 
@@ -79,6 +73,26 @@ def format_event_datetime(event_datetime: str) -> str:
         return datetime.strptime(event_datetime, "%Y-%m-%d %H:%M").strftime("%d.%m.%Y %H:%M")
     except ValueError:
         return event_datetime
+
+
+def contains_forbidden_word(text: str) -> bool:
+    lowered = text.lower()
+    normalized_words = re.findall(r"[а-яА-ЯёЁa-zA-Z0-9_]+", lowered)
+    for bad_word in FORBIDDEN_WORDS:
+        if " " in bad_word:
+            if bad_word in lowered:
+                return True
+        elif bad_word in normalized_words:
+            return True
+    return False
+
+
+async def build_private_link() -> str:
+    global BOT_USERNAME
+    if not BOT_USERNAME:
+        me = await bot.get_me()
+        BOT_USERNAME = me.username
+    return f"https://t.me/{BOT_USERNAME}"
 
 
 def contains_forbidden_word(text: str) -> bool:
@@ -232,43 +246,6 @@ async def remind_checker():
             logger.error(f"Критическая ошибка в `remind_checker`: {e}")
         await asyncio.sleep(REMINDER_CHECK_INTERVAL)
 
-async def _calculate_sleep_time(hour_str: str) -> int:
-    """Calculates seconds until the next target time."""
-    now = datetime.now()
-    h, m = map(int, hour_str.split(':'))
-    target_today = now.replace(hour=h, minute=m, second=0, microsecond=0)
-    target = target_today if target_today > now else target_today + timedelta(days=1)
-    return (target - now).total_seconds()
-
-async def daily_channel_post(session: aiohttp.ClientSession):
-    """### FIX: Ежедневно отправляет пост в канал, используя точный расчет времени и ретраи"""
-    while True:
-        if not TARGET_CHANNEL_ID:
-            logger.warning("Пропуск ежедневного поста: не задан TARGET_CHANNEL_ID. Повторная проверка через час.")
-            await asyncio.sleep(3600)
-            continue
-
-        sleep_seconds = await _calculate_sleep_time(DAILY_POST_TIME_STR)
-        logger.info(f"Daily post scheduled. Sleeping for {sleep_seconds:.0f} seconds.")
-        await asyncio.sleep(sleep_seconds)
-
-        # Retry logic in case of network errors
-        for attempt in range(3):
-            try:
-                quote = await ExternalContentManager.get_random_quote(session)
-                text = f"<b>Цитата дня</b> ☀️\n\n{html.escape(quote)}"
-                await bot.send_message(TARGET_CHANNEL_ID, text, parse_mode="HTML")
-                logger.info(f"Опубликована цитата дня в канале {TARGET_CHANNEL_ID}.")
-                await asyncio.sleep(60) # Sleep for a minute to avoid double-posting
-                break # Success
-            except Exception as e:
-                logger.error(f"Не удалось отправить сообщение в канал (попытка {attempt + 1}/3): {e}.")
-                if attempt < 2:
-                    await asyncio.sleep(300) # Wait 5 minutes before retrying
-                else:
-                    logger.error("Все попытки отправки сообщения в канал не увенчались успехом.")
-
-
 # --- COMMAND HANDLERS ---
 @dp.message(CommandStart())
 async def start_cmd(message: types.Message):
@@ -379,20 +356,6 @@ async def sticker_cmd(message: types.Message):
 @dp.message(F.chat.type.in_({ChatType.GROUP, ChatType.SUPERGROUP}), Command("play"))
 async def play_cmd(message: types.Message):
     await message.answer_dice(emoji="🎲")
-
-@dp.message(IsAdmin(), Command("post"))
-async def post_to_channel_cmd(message: types.Message):
-    if not TARGET_CHANNEL_ID: return await message.reply("Ошибка: ID целевого канала не настроен.")
-    command_parts = message.text.split(maxsplit=1)
-    if len(command_parts) < 2: return await message.reply("Пример: `/post Привет, канал!`")
-    
-    try:
-        await bot.send_message(TARGET_CHANNEL_ID, command_parts[1])
-        await message.reply("✅ Сообщение успешно отправлено в канал.")
-        logger.info(f"Admin {message.from_user.id} posted to channel {TARGET_CHANNEL_ID}.")
-    except Exception as e:
-        await message.reply(f"❌ Не удалось отправить сообщение: {e}")
-        logger.error(f"Failed to post to channel by admin {message.from_user.id}: {e}")
 
 # --- CALLBACK HANDLERS ---
 @dp.callback_query(SimpleCalendarCallback.filter())
@@ -604,6 +567,7 @@ async def on_startup(bot: Bot, aiosession: aiohttp.ClientSession):
     logger.info("База данных инициализирована.")
     
     asyncio.create_task(remind_checker())
+    logger.info("Фоновая задача напоминаний запущена.")
     asyncio.create_task(daily_channel_post(aiosession))
     logger.info("Фоновые задачи (напоминания, ежедневный пост) запущены.")
     me = await bot.get_me()
